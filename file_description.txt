@@ -1,0 +1,20 @@
+File description		
+PROTOCOLS		
+growth protocol	"none, tumor tissue was digested and single cell suspension was stained and sorted directly"	
+treatment protocol 	none	
+extract protocol	"cells were sorted directly into RNA lysis buffer (provided by Microsynth AG) and frozen to -80¡C. isolation of RNA performed by Microsynth AG, Switzerland"	
+library construction protocol	"NuGene low input RNA libraries for Illumina, Poly-A enrichment, Illumina TrueSeq single-end library construction"	
+library strategy	RNA-Seq	
+		
+DATA PROCESSING PIPELINE		
+data processing step	Alignment to hg38 using STAR	
+data processing step	knownGene counting	
+data processing step	filtered for >count per million reads in at least three samples	
+data processing step	edgeR (3.20.9) Bioconductor normalization for library size	
+data processing step	edgeR differential gene expression between Siglec9 plus vs Siglec9 minus using QLF function with batch correction for patients	
+genome build	hg38	
+processed data files format and content	tab separated values. Table of raw gene level counts and top 200 regulated genes by edgeR differential gene expression between Siglec9 plus and Siglec 9 minus cells.	
+		
+file name	file type	file checksum
+siglec9_counts_all.txt	gene counts	c66027cd80df5fa9b52bc15b71510520
+Regulated_Genes_Siglec9_top200.txt	top200 differentially expressed genes	eea411c22d8d844438f13b6e77999672
